@@ -11,7 +11,8 @@ import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 require("@solana/wallet-adapter-react-ui/styles.css");
 
 export default function Home() {
-  const endpoint = useMemo(() => "https://empty-icy-uranium.solana-devnet.discover.quiknode.pro/265fd54810637435a12cfb7108857693a7e8bb1d/", []);
+  const endpoint = "https://empty-icy-uranium.solana-devnet.discover.quiknode.pro/265fd54810637435a12cfb7108857693a7e8bb1d/";
+  const wallets = useMemo(() => [new PhantomWalletAdapter()], []);
   return (
     <div className={style.wrapper}>
       <Header />
@@ -20,3 +21,4 @@ export default function Home() {
     </div>
   );
 }
+
